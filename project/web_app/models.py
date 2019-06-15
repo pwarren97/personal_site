@@ -15,8 +15,7 @@ class BlogEntry(models.Model):
     pub_date = models.DateField()
     edit_date = models.DateField()
     title = models.CharField(max_length=40)
-    entry = models.CharField(max_length=5000)
-    
+    entry = models.TextField()
 
     def __str__(self):
-        return self.tile
+        return self.title
