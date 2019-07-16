@@ -3,17 +3,25 @@
 *@
 @{
 	ViewData["Title"] = "Blog";
+
+	var EntryTitle = "Blog Heading";
+	var EntryBody = "Body";
 }
 
-<div class="jumbotron">
-	<h1 class="display-4 text-center">Blog title</h1>
+<div style="margin-top: 3em">
+	<h1 class="display-4 text-center" style="margin-bottom: 1em">Personal Blog</h1>
 
+	<div class="container">
 	@for (int i = 0; i < 10; i++)
 	{
-		<div class="container">
-			<p>
-				Here is some text
-			</p>
+		<div class="row jumbotron">
+			<div class="col-md-12">
+				<h1>@EntryTitle</h1>
+				<p>
+					@EntryBody
+				</p>
+			</div>
 		</div>
 	}
+	</div>
 </div>

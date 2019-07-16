@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.Entity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using System.Threading.Tasks;
