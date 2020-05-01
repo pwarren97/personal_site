@@ -3,5 +3,10 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    nav(class="navbar")
+      button(class="navbutton") Home
+      button(class="navbutton") Past Projects
+      button(class="navbutton") Blog
   body
-    block content
+    div(class="content")
+      block content

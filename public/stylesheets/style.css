@@ -1,8 +1,28 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+nav {
+  margin: 0px;
+  background-color: #DDDDDD;
+  padding: 0.5em 15%;
+  box-shadow: 0 0.25em 0.25em #ccc;
+}
+
+.navbutton {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.content {
+  margin: 3em 15%;
+}
+
+#homephoto {
+  width: 16em;
 }
