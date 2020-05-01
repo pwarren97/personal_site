@@ -9,7 +9,7 @@ a {
 
 nav {
   margin: 0px;
-  background-color: #DDDDDD;
+  background-color: #333;
   padding: 0.5em 15%;
   box-shadow: 0 0.25em 0.25em #ccc;
 }
@@ -21,8 +21,12 @@ nav {
 
 .content {
   margin: 3em 15%;
+  padding: 3em;
+  background-color: #f2f2f2;
+  box-shadow: 0 0.25em 0.25em #ccc;
+  border-radius: 0.25em;
 }
 
 #homephoto {
-  width: 16em;
+  width: 10em;
 }
