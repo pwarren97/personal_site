@@ -7,19 +7,24 @@ a {
   color: #00B7FF;
 }
 
-nav {
+.navbar {
   margin: 0px;
-  background-color: #555;
+  background-color: #111;
   padding: 0.5em 15%;
   box-shadow: 0 0.25em 0.25em #ccc;
   display: flex;
 }
+/* 
+.navbar:hover {
+  opacity: 1;
+} */
 
 
 .navbutton {
   margin-left: 0.5em;
   margin-right: 0.5em;
   height: 2.5em;
+  opacity: 1;
 }
 
 .content {
