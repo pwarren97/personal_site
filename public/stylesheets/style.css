@@ -1,6 +1,9 @@
 body {
-  margin: 0px;
+  margin: 0;
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("/images/bench-gazebo-background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 a {
@@ -8,26 +11,28 @@ a {
 }
 
 .navbar {
-  margin: 0px;
-  background-color: #555;
+  margin: 0%;
+  background-color: #444;
   padding: 0.5em 15%;
-  box-shadow: 0 0.25em 0.25em #ccc;
+  height: 2em;
+  box-shadow: 0 0.25em 0.25em #111;
   display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
-
 
 .navbutton {
   margin-left: 0.5em;
   margin-right: 0.5em;
-  height: 2.5em;
   opacity: 1;
 }
 
 .content {
-  margin: 3em 15%;
   padding: 3em;
+  margin: 8em 15%;
   background-color: #f2f2f2;
-  box-shadow: 0 0.25em 0.25em #ccc;
+  box-shadow: 0 0.25em 0 #ccc;
   border-radius: 0.25em;
 }
 
