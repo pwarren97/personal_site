@@ -23,10 +23,16 @@ a {
 }
 
 .navbutton {
+  height: 80%;
+  border-radius: 0.5em;
   margin-left: 0.5em;
   margin-right: 0.5em;
-  opacity: 1;
+  background-color: #ccc;
+  padding: 0.25em 1em;
+  color: black;
+  font-size: 20px;
   font-family: 'Arial';
+  text-align: center;
 }
 
 .content {
@@ -36,6 +42,10 @@ a {
   box-shadow: 0 0.25em 0 #ccc;
   border-radius: 0.25em;
   font-family: 'Tahoma';
+}
+
+.entryitem {
+
 }
 
 #homephoto {

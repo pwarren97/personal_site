@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  - for (var c = 0; c < entries.length; c++)
+    div(class="entryitem")
+      p
+        b #{entries[c].title}
+        | :
+        = entries[c].data

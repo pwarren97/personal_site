@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET blog listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  // pull entries from database
+  res.render('entrylist', { entries: [{title: 'Entry 1', data: 'The int.'}] });
 });
 
 module.exports = router;

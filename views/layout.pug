@@ -3,12 +3,13 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    header
-      nav(class="navbar")
-        button(class="navbutton", href="/") Home
-        button(class="navbutton", href="#") Past Projects
-        button(class="navbutton", href="#") Blog
-        button(class="navbutton", href="#") Hire Me
+
   body
+  nav(class="navbar")
+    header
+        a(class="navbutton", href="/", type="button") Home
+        a(class="navbutton", href="#") Past Projects
+        a(class="navbutton", href="/blog") Blog
+        a(class="navbutton", href="#") Hire Me
     div(class="content")
       block content
