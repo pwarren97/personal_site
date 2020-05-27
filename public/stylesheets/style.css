@@ -48,6 +48,13 @@ small {
   font-family: 'Tahoma';
 }
 
+.icon {
+  height: 24px;
+  width: 24px;
+  margin: 0.2em;
+  margin-left: 0;
+}
+
 .entryitem {
   border-style: solid;
   border-color: #ddd;
