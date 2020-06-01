@@ -12,6 +12,8 @@ router.post('/', function(req, res, next) {
   var hashedPassword = hash.digest();
   hashedPassword = hashedPassword.toString('hex');
 
+  console.log(req.session);
+
   // check to see if the username and password are correct
   if (req.body.username === "peyton" && hashedPassword === "7c942e7f59dcc59d131134a97d39754a428f829c5a6e318be269cce4571cd83c") {
     res.render('index');

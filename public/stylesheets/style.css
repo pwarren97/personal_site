@@ -57,11 +57,13 @@ small {
 
 .entryitem {
   border-style: solid;
-  border-color: #ddd;
-  border-width: 0.1em;
+  border-color: #f3e5ab;
+  border-width: 0.05em;
   border-radius: 0.5em;
+  box-shadow: 0 0.1em 0.1em gray;
   margin-bottom: 1em;
   padding: 1em;
+  background-color: #fdfaee;
 }
 
 .entryitem p {
