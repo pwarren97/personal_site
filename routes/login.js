@@ -16,7 +16,9 @@ router.post('/', function(req, res, next) {
 
   // check to see if the username and password are correct
   if (req.body.username === "peyton" && hashedPassword === "7c942e7f59dcc59d131134a97d39754a428f829c5a6e318be269cce4571cd83c") {
-    res.render('index');
+    req.session.user = "admin";
+    console.log(req.session);
+    res.redirect('/login/admin-panel');
   }
   else {
     res.render('login');
@@ -24,7 +26,21 @@ router.post('/', function(req, res, next) {
 });
 
 router.get('/', function(req, res, next) {
-  res.render('login');
+  if (req.session.user === 'admin') {
+    res.render('index');
+  }
+  else {
+    res.render('login');
+  }
+});
+
+router.get('/admin-panel', function(req, res) {
+  if (req.session.user === "admin") {
+    res.render('admin-panel');
+  }
+  else {
+    throw new Error('404');
+  }
 });
 
 module.exports = router;

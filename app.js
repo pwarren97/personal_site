@@ -23,7 +23,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(session({ secret: 'ssshhh' }));
+
+var hour = 3600000;
+app.use(session({
+  secret: 'ssshhh',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false,
+            maxAge: 24 * hour }
+ }));
 
 app.use('/blog', blogRouter);
 app.use('/', indexRouter);
