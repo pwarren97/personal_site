@@ -11,9 +11,8 @@ var loginCookieOptions = {
   sameSite: true
 };
 
-// check to see if someone is logged in
-const loggedIn = (req) => {
-  return req.cookies.user === 'admin';
+const loggedIn = (user) => {
+  return user === 'admin';
 };
 
 const throw404 = () => {
@@ -21,7 +20,7 @@ const throw404 = () => {
 };
 
 const renderIfLoggedIn = (req, res, page) => {
-  if (loggedIn) {
+  if (loggedIn(req.cookies.user)) {
     res.render(page);
   }
   else {
@@ -55,7 +54,7 @@ router.post('/', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
   // Return something if logged in, otherwise the login page
-  if (loggedIn(req)) {
+  if (loggedIn(req.cookies.user)) {
     res.redirect('/login/admin-panel');
   }
   else {
@@ -65,7 +64,7 @@ router.get('/', function(req, res, next) {
 
 // Log Out Operation
 router.get('/log-out', function(req, res, next) {
-  if (loggedIn(req)) {
+  if (loggedIn(req.cookies.user)) {
     res.clearCookie('user');
     res.redirect('/login');
   }
@@ -85,6 +84,11 @@ router.get('/add-blog-entry', function(req, res) {
   renderIfLoggedIn(req, res, 'admin-panel-items/add-blog-entry');
 });
 
+// Edit a Blog Entry
+// router.get('/edit-blog-entry', function(req, res) {
+//   renderIfLoggedIn(req, res, 'admin-panel-items/edit-blog-entry');
+// });
+
 // Remove a Blog Entry
 router.get('/remove-blog-entry', function(req, res) {
   renderIfLoggedIn(req, res, 'admin-panel-items/remove-blog-entry');
@@ -95,10 +99,14 @@ router.get('/add-past-project', function(req, res) {
   renderIfLoggedIn(req, res, 'admin-panel-items/add-past-project');
 });
 
+// Edit a Past Project
+// router.get('/edit-past-project', function(req, res) {
+//   renderIfLoggedIn(req, res, 'admin-panel-items/edit-past-project')
+// })
+
 // Remove a Past Project
 router.get('/remove-past-project', function(req, res) {
    renderIfLoggedIn(req, res, 'admin-panel-items/remove-past-project');
 });
-
 
 module.exports = router;
