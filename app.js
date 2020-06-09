@@ -19,19 +19,22 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 var hour = 3600000;
+var maxAge = 24 * hour;
+var secret = "ssshhh";
+
 app.use(session({
-  secret: 'ssshhh',
+  secret: secret,
   resave: false,
   saveUninitialized: false,
   cookie: { secure: false,
-            maxAge: 24 * hour }
- }));
+            maxAge: maxAge }
+}));
+app.use(cookieParser(secret));
 
 app.use('/blog', blogRouter);
 app.use('/', indexRouter);
