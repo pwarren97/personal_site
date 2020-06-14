@@ -84,11 +84,6 @@ router.get('/add-blog-entry', function(req, res) {
   renderIfLoggedIn(req, res, 'admin-panel-items/add-blog-entry');
 });
 
-// Edit a Blog Entry
-// router.get('/edit-blog-entry', function(req, res) {
-//   renderIfLoggedIn(req, res, 'admin-panel-items/edit-blog-entry');
-// });
-
 // Remove a Blog Entry
 router.get('/remove-blog-entry', function(req, res) {
   renderIfLoggedIn(req, res, 'admin-panel-items/remove-blog-entry');
@@ -98,11 +93,6 @@ router.get('/remove-blog-entry', function(req, res) {
 router.get('/add-past-project', function(req, res) {
   renderIfLoggedIn(req, res, 'admin-panel-items/add-past-project');
 });
-
-// Edit a Past Project
-// router.get('/edit-past-project', function(req, res) {
-//   renderIfLoggedIn(req, res, 'admin-panel-items/edit-past-project')
-// })
 
 // Remove a Past Project
 router.get('/remove-past-project', function(req, res) {
