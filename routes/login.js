@@ -11,23 +11,6 @@ var loginCookieOptions = {
   sameSite: true
 };
 
-const loggedIn = (user) => {
-  return user === 'admin';
-};
-
-const throw404 = () => {
-  throw new Error('404');
-};
-
-const renderIfLoggedIn = (req, res, page) => {
-  if (loggedIn(req.cookies.user)) {
-    res.render(page);
-  }
-  else {
-    throw404();
-  }
-};
-
 const hashPassword = (password) => {
   var hash = crypto.createHash('sha256');
   hash.update(password, 'utf8');
@@ -54,7 +37,7 @@ router.post('/', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
   // Return something if logged in, otherwise the login page
-  if (loggedIn(req.cookies.user)) {
+  if (loggedIn(req)) {
     res.redirect('/login/admin-panel');
   }
   else {
@@ -64,7 +47,7 @@ router.get('/', function(req, res, next) {
 
 // Log Out Operation
 router.get('/log-out', function(req, res, next) {
-  if (loggedIn(req.cookies.user)) {
+  if (loggedIn(req)) {
     res.clearCookie('user');
     res.redirect('/login');
   }
