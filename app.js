@@ -36,21 +36,7 @@ app.use(session({
 }));
 app.use(cookieParser(secret));
 
-// global helpers
-const loggedIn = (req) => {
-  return req.cookies.user === 'admin';
-};
-const throw404 = () => {
-  throw new Error('404');
-};
-const renderIfLoggedIn = (req, res, page) => {
-  if (loggedIn(req)) {
-    res.render(page);
-  }
-  else {
-    throw404();
-  }
-};
+/* END global helpers */
 
 app.use('/blog', blogRouter);
 app.use('/', indexRouter);
