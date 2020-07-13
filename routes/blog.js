@@ -4,6 +4,9 @@ var helpers = require('./helpers');
 
 var info = { loggedIn: false, entries: [{title: 'Entry 1', id: 1, data: 'The int.', date: '2019-01-01'}, {title: 'Entry 2', id: 2, data: 'The int.', date: '2019-01-01'}] };
 
+var showdown = require('showdown');
+var converter = new showdown.Converter();
+
 /* GET blog listing. */
 router.get('/', function(req, res) {
   // pull entries from database
