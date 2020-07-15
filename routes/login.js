@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
-var helpers = require('./helpers');
+var helpers = require('./utils/helpers');
 
 var correctPasswordHash = "7c942e7f59dcc59d131134a97d39754a428f829c5a6e318be269cce4571cd83c";
 
