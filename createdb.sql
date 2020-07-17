@@ -1,0 +1,13 @@
+CREATE DATABASE personal_site
+CREATE TABLE BlogEntry(title VARCHAR(100) NOT NULL,
+  markdown LONGTEXT NOT NULL,
+  html LONGTEXT NOT NULL,
+  tags TINYTEXT,
+  created DATETIME NOT NULL,
+  last_edited DATETIME)
+CREATE TABLE PastProjects(title VARCHAR(100) NOT NULL,
+  markdown LONGTEXT NOT NULL,
+  html LONGTEXT NOT NULL,
+  tags TINYTEXT,
+  created DATETIME NOT NULL,
+  last_edited DATETIME)
