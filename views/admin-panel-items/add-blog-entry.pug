@@ -2,3 +2,20 @@ extends ../layout
 
 block content
   h1 Add a blog entry
+
+  form
+    label(for="title") Title:&nbsp;
+    input(type="text", name="title")
+    br
+    br
+
+    label(for="content") Content:
+    br
+    textarea(name="content", rows="4", cols="100%")
+    br
+
+    label(for="images") Upload Images:&nbsp;
+    input(type="file")
+    br
+    br
+    input(type="button", value="Submit")

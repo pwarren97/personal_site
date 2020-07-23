@@ -17,8 +17,4 @@ router.get('/entry/:id', function(req, res) {
   res.render('entry', { data: req.params.id });
 });
 
-router.get('/add-blog-entry', function(req, res) {
-  res.render('add-blog-entry');
-});
-
 module.exports = router;

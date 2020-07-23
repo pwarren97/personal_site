@@ -56,6 +56,11 @@ small {
   font-family: 'Tahoma';
 }
 
+.content textarea {
+  margin: 1em 0em;
+  font: 15px "Lucinda Grande", Helvetica, Arial, sans-serif;
+}
+
 .icon {
   height: 24px;
   width: 24px;

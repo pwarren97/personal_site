@@ -1,13 +1,13 @@
-CREATE DATABASE personal_site
+CREATE DATABASE personal_site;
 CREATE TABLE BlogEntry(title VARCHAR(100) NOT NULL,
   markdown LONGTEXT NOT NULL,
   html LONGTEXT NOT NULL,
-  tags TINYTEXT,
+  tags TINYTEXT NULL,
   created DATETIME NOT NULL,
-  last_edited DATETIME)
+  last_edited DATETIME NULL);
 CREATE TABLE PastProjects(title VARCHAR(100) NOT NULL,
   markdown LONGTEXT NOT NULL,
   html LONGTEXT NOT NULL,
-  tags TINYTEXT,
+  tags TINYTEXT NULL,
   created DATETIME NOT NULL,
-  last_edited DATETIME)
+  last_edited DATETIME NULL);
