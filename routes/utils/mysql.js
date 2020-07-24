@@ -11,7 +11,10 @@ class mysql extends DBModel {
     this._pastProjectsImageFolder = '/images/past_projects';
 
     this._getBlogEntryQuery = 'SELECT Title, Tags, HTML, Created FROM BlogEntry';
-    this._setBlogEntryQuery = 'UPDATE';
+    this._setBlogEntryQuery = 'INSERT INTO BlogEntries\
+                              VALUES ?, ?, ?, ?, ?, ?, ?\
+                              ON DUPLICATE KEY UPDATE
+                              ';
     this._setPastProjectQuery = '';
 
     this.connection = mysql.createConnection({
@@ -21,18 +24,19 @@ class mysql extends DBModel {
       database: 'personal_site'
     });
   }
-
-  get blogEntry() {
-    this.connection.query(this._getBlogEntryQuery)
+  pullBlogEntry(id) {
+    this.connection.query(this._getBlogEntryQuery, function(err, results, fields) {
+      if (err) throw err;
+    });
   }
 
   saveBlogEntry(entry) {
     this.connection.query(this._setBlogEntryQuery, ['value1', 'value2'], function(err, result) {
-      if (err) console.log(err)
+      if (err) throw err;
     })
   }
 
-  get pastProjects() {
+  pullPastProject(id) {
 
   }
 
