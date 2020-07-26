@@ -6,9 +6,10 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-var indexRouter = require('./routes/index');
-var blogRouter = require('./routes/blog');
-var loginRouter = require('./routes/login');
+var routesFolder = './routes'
+var indexRouter = require(`${routesFolder}/index`);
+var blogRouter = require(`${routesFolder}/blog`);
+var loginRouter = require(`${routesFolder}/login`);
 
 var app = express();
 

@@ -1,4 +1,5 @@
 CREATE DATABASE personal_site;
+USE personal_site;
 
 CREATE TABLE BlogEntries(
   entryID int NOT NULL UNIQUE,

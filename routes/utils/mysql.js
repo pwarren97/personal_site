@@ -10,11 +10,11 @@ class mysql extends DBModel {
     this._blogImageFolder = '/images/blog/';
     this._pastProjectsImageFolder = '/images/past_projects';
 
-    this._getBlogEntryQuery = 'SELECT Title, Tags, HTML, Created FROM BlogEntry';
+    this._getBlogEntryQuery = 'SELECT Title, Tags, HTML, Created FROM BlogEntry;';
     this._setBlogEntryQuery = 'INSERT INTO BlogEntries\
                               VALUES ?, ?, ?, ?, ?, ?, ?\
-                              ON DUPLICATE KEY UPDATE
-                              ';
+                              ON DUPLICATE KEY UPDATE\
+                              ;';
     this._setPastProjectQuery = '';
 
     this.connection = mysql.createConnection({
@@ -31,8 +31,14 @@ class mysql extends DBModel {
   }
 
   saveBlogEntry(entry) {
-    this.connection.query(this._setBlogEntryQuery, ['value1', 'value2'], function(err, result) {
+    var [ title, markdown, tags ] = entry;
+    html = `<h1>${title}</h1>` + this.converter.makeHTML(markdown);
+
+    this.connection.query(this._setBlogEntryQuery, [title, markdown, html, tags], function(err, result) {
       if (err) throw err;
+      else {
+
+      }
     })
   }
 
