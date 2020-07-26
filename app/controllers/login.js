@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
 var helpers = require('./utils/helpers');
+var { loggedIn, throw404, renderIfLoggedIn } = helpers;
 
 var correctPasswordHash = "7c942e7f59dcc59d131134a97d39754a428f829c5a6e318be269cce4571cd83c";
 
@@ -39,7 +40,7 @@ router.post('/', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
   // Return something if logged in, otherwise the login page
-  if (helpers.loggedIn(req)) {
+  if (loggedIn(req)) {
     res.redirect('/login/admin-panel');
   }
   else {
@@ -49,39 +50,39 @@ router.get('/', function(req, res, next) {
 
 // Log Out Operation
 router.get('/log-out', function(req, res, next) {
-  if (helpers.loggedIn(req)) {
+  if (loggedIn(req)) {
     res.clearCookie('user');
     res.redirect('/login');
   }
   else {
-    helpers.throw404();
+    throw404();
   }
 });
 
 // Admin Panel
 router.get('/admin-panel', function(req, res) {
   // return admin panel only if there is a proper cookie
-  helpers.renderIfLoggedIn(req, res, 'admin-panel');
+  renderIfLoggedIn(req, res, 'admin-panel');
 });
 
 // Add a Blog Entry
 router.get('/add-blog-entry', function(req, res) {
-  helpers.renderIfLoggedIn(req, res, 'admin-panel-items/add-blog-entry');
+  renderIfLoggedIn(req, res, 'admin-panel-items/add-blog-entry');
 });
 
 // Remove a Blog Entry
 router.get('/remove-blog-entry', function(req, res) {
-  helpers.renderIfLoggedIn(req, res, 'admin-panel-items/remove-blog-entry');
+  renderIfLoggedIn(req, res, 'admin-panel-items/remove-blog-entry');
 });
 
 // Add a Past Project
 router.get('/add-past-project', function(req, res) {
-  helpers.renderIfLoggedIn(req, res, 'admin-panel-items/add-past-project');
+  renderIfLoggedIn(req, res, 'admin-panel-items/add-past-project');
 });
 
 // Remove a Past Project
 router.get('/remove-past-project', function(req, res) {
-  helpers.renderIfLoggedIn(req, res, 'admin-panel-items/remove-past-project');
+  renderIfLoggedIn(req, res, 'admin-panel-items/remove-past-project');
 });
 
 module.exports = router;

@@ -6,7 +6,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-var routesFolder = './routes'
+var routesFolder = './app/controllers'
 var indexRouter = require(`${routesFolder}/index`);
 var blogRouter = require(`${routesFolder}/blog`);
 var loginRouter = require(`${routesFolder}/login`);
@@ -14,7 +14,7 @@ var loginRouter = require(`${routesFolder}/login`);
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/app/views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
