@@ -3,6 +3,9 @@ var router = express.Router();
 var helpers = require('./utils/helpers');
 var { loggedIn, throw404, renderIfLoggedIn } = helpers;
 
+var model = require('../models/mysql');
+var db = new model.MySQL();
+
 var info = { loggedIn: false, entries: [{title: 'Entry 1', id: 1, data: 'The int.', date: '2019-01-01'}, {title: 'Entry 2', id: 2, data: 'The int.', date: '2019-01-01'}] };
 
 

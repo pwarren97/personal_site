@@ -1,6 +1,6 @@
-var { DBModel } = require('./dbmodel.js');
+var { DBModel } = require('./dbmodel');
 
-class mysql extends DBModel {
+class MySQL extends DBModel {
   constructor() {
     this.mysql = require('mysql');
     this.showdown = require('showdown');
@@ -33,6 +33,7 @@ class mysql extends DBModel {
   saveBlogEntry(entry) {
     var [ title, markdown, tags ] = entry;
     html = `<h1>${title}</h1>` + this.converter.makeHTML(markdown);
+    currentDateTime = new Date(Date.now());
 
     this.connection.query(this._setBlogEntryQuery, [title, markdown, html, tags], function(err, result) {
       if (err) throw err;

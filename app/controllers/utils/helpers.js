@@ -1,4 +1,5 @@
 /* global helpers */
+
 const loggedIn = (req) => {
   return req.cookies.user === 'admin';
 };
@@ -15,5 +16,11 @@ const renderIfLoggedIn = (req, res, page) => {
     throw404();
   }
 };
+
+function importDB(dbName) {
+  if (dbName == 'sql') {
+    var model = require('../model/')
+  }
+}
 
 module.exports = { loggedIn, throw404, renderIfLoggedIn };
