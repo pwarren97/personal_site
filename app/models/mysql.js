@@ -1,7 +1,9 @@
+var showdown = require('showdown');
 var { DBModel } = require('./dbmodel');
 
 class MySQL extends DBModel {
   constructor() {
+    super();
     this.mysql = require('mysql');
     this.showdown = require('showdown');
     this.converter = new showdown.Converter();
@@ -17,7 +19,7 @@ class MySQL extends DBModel {
                               ;';
     this._setPastProjectQuery = '';
 
-    this.connection = mysql.createConnection({
+    this.connection = this.mysql.createConnection({
       host: 'localhost',
       user: 'personal_site',
       password: 'some_secret',
@@ -47,9 +49,17 @@ class MySQL extends DBModel {
 
   }
 
-  savePastProject() {
+  savePastProject(entry) {
 
   }
 
+  validateEntry(entry) {
+    return super.validateEntry(entry);
+  }
+
+  validateProjectEntry(entry) {
+    return super.validateProjectEntry(entry);
+  }
+
 }
-module.exports = mysql;
+exports.MySQL = MySQL;

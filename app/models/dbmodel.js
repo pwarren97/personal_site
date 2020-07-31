@@ -1,23 +1,32 @@
-
+// Model that represents the database and the operations it must maintain
 class DBModel {
   constructor() {
 
   }
 
-  get blogEntry() {
+  pullBlogEntry(id) {
 
   }
 
-  saveBlogEntry() {
+  saveBlogEntry(entry) {
 
   }
 
-  get pastProjects() {
+  pullPastProjects(id) {
 
   }
 
-  savePastProject() {
+  savePastProject(entry) {
 
   }
 
+  validateBlogEntry(entry) {
+    return true;
+  }
+
+  validateProjectEntry(entry) {
+    return true;
+  }
 }
+
+exports.DBModel = DBModel;
