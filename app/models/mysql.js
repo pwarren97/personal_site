@@ -1,31 +1,35 @@
 var showdown = require('showdown');
 var { DBModel } = require('./dbmodel');
 
+var mysql = require('mysql');
+var showdown = require('showdown');
+
+/* Queries */
+var blogImageFolder = '/images/blog/';
+var pastProjectsImageFolder = '/images/past_projects';
+var getBlogEntryQuery = 'SELECT Title, Tags, HTML, Created FROM BlogEntry;';
+var setBlogEntryQuery = 'INSERT INTO BlogEntries\
+                    VALUES ?, ?, ?, ?, ?, ?, ?\
+                    ON DUPLICATE KEY UPDATE\
+                    ;';
+var setPastProjectQuery = '';
+
 class MySQL extends DBModel {
   constructor() {
     super();
-    this.mysql = require('mysql');
-    this.showdown = require('showdown');
     this.converter = new showdown.Converter();
-    // converter.makeHTML(data)
-
-    this._blogImageFolder = '/images/blog/';
-    this._pastProjectsImageFolder = '/images/past_projects';
-
-    this._getBlogEntryQuery = 'SELECT Title, Tags, HTML, Created FROM BlogEntry;';
-    this._setBlogEntryQuery = 'INSERT INTO BlogEntries\
-                              VALUES ?, ?, ?, ?, ?, ?, ?\
-                              ON DUPLICATE KEY UPDATE\
-                              ;';
-    this._setPastProjectQuery = '';
-
-    this.connection = this.mysql.createConnection({
+    this.connection = mysql.createConnection({
       host: 'localhost',
       user: 'personal_site',
       password: 'some_secret',
       database: 'personal_site'
     });
   }
+
+  createTable() {
+    
+  }
+
   pullBlogEntry(id) {
     this.connection.query(this._getBlogEntryQuery, function(err, results, fields) {
       if (err) throw err;

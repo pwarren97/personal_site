@@ -4,6 +4,10 @@ class DBModel {
 
   }
 
+  createTable() {
+    
+  }
+
   pullBlogEntry(id) {
 
   }
