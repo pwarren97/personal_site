@@ -27,13 +27,17 @@ class MySQL extends DBModel {
   }
 
   createTable() {
-    
+
   }
 
   pullBlogEntry(id) {
     this.connection.query(this._getBlogEntryQuery, function(err, results, fields) {
       if (err) throw err;
     });
+  }
+
+  pullBlogList() {
+    
   }
 
   saveBlogEntry(entry) {
