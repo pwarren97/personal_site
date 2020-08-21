@@ -5,15 +5,11 @@ class DBModel {
   }
 
   createTable() {
-
+    
   }
 
   pullBlogEntry(id) {
 
-  }
-
-  pullBlogList() {
-    
   }
 
   saveBlogEntry(entry) {

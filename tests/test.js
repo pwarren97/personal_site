@@ -1,8 +1,9 @@
 // Extract the list of tests to run
 args = process.argv.slice(2);
+console.log(args);
 
 // Specify all test to be run
-var testMySQL = false;
+var testMySQL = false
 
 for (c = 0; c < args.length; c++) {
   if (args[c].toLowerCase() == "mysql") {
