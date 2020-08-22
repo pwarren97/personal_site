@@ -1,3 +1,5 @@
+'use strict';
+
 // Extract the list of tests to run
 args = process.argv.slice(2);
 console.log(args);
