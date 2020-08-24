@@ -6,8 +6,10 @@ var { expect, assert } = require('chai');
 var db = new MySQL();
 
 describe('MySQL', () => {
-  describe('createTable', () => {
-    expect(db.createTable).to.be.a('function');
+  describe('createTables', () => {
+    it('Should create the tables from the schema', () => {
+      expect(true).to.equal(true);
+    })
   });
   describe('pullBlogEntry', () => {
 

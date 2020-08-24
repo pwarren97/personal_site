@@ -4,8 +4,8 @@ class DBModel {
 
   }
 
-  createTable() {
-    
+  createTables() {
+
   }
 
   pullBlogEntry(id) {
