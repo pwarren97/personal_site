@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha --recursive './tests/*'"
+    "test": "mocha --recursive"
   },
   "dependencies": {
     "args": "^5.0.1",
@@ -17,6 +17,7 @@
     "express-session": "^1.17.1",
     "http-errors": "~1.6.3",
     "lodash": "^4.17.20",
+    "mocha": "^8.1.1",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
     "npm": "^6.14.8",
