@@ -27,7 +27,7 @@ class MySQL extends DBModel {
   }
 
   createTable() {
-    
+    return () => {}
   }
 
   pullBlogEntry(id) {

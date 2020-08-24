@@ -1,10 +1,33 @@
 'use strict';
 
-var db = require('../../app/models/mysql');
-var expect = require('chai').expect;
+var { MySQL } = require('../../app/models/mysql');
+var { expect, assert } = require('chai');
 
-function run() {
-  console.log("Test!");
-}
+var db = new MySQL();
 
-exports.run = run;
+describe('MySQL', () => {
+  describe('createTable', () => {
+    expect(db.createTable).to.be.a('function');
+  });
+  describe('pullBlogEntry', () => {
+
+  });
+  describe('saveBlogEntry', () => {
+
+  });
+  describe('pullPastProject', () => {
+
+  });
+  describe('validateEntry', () => {
+
+  });
+  describe('validateProjectEntry', () => {
+
+  });
+});
+
+// function run() {
+//   console.log("Test!");
+// }
+
+// exports.run = run;
