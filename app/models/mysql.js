@@ -27,13 +27,14 @@ class MySQL extends DBModel {
   }
 
   createTables() {
-    
+
   }
 
   pullBlogEntry(id) {
     this.connection.query(this._getBlogEntryQuery, function(err, results, fields) {
       if (err) throw err;
     });
+    return true;
   }
 
   saveBlogEntry(entry) {
@@ -57,7 +58,7 @@ class MySQL extends DBModel {
 
   }
 
-  validateEntry(entry) {
+  validateBlogEntry(entry) {
     return super.validateEntry(entry);
   }
 
