@@ -9,14 +9,14 @@ var db = new MySQL();
 describe('MySQL', () => {
   describe('constructor', () => {
     it('Should Set up connection with the database via the constructor', () => {
-      db = new MySQL(); // dies at end of scope
+      var temp = new MySQL(); // dies at end of scope
       expect(true).to.equal(true);
     });
   });
   describe('createTables', () => {
     it('Should create the tables from the schema', () => {
       expect(true).to.equal(true);
-    })
+    });
   });
   describe('saveBlogEntry', () => {
 

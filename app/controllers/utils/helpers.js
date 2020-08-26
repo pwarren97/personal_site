@@ -18,8 +18,8 @@ const renderIfLoggedIn = (req, res, page) => {
 };
 
 function importDB(dbName) {
-  if (dbName == 'sql') {
-    var model = require('../model/')
+  if (dbName == 'mysql') {
+    return require('../models/mysql.js')
   }
 }
 

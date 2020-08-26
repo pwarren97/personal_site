@@ -21,7 +21,7 @@ class MySQL extends DBModel {
     this.connection = mysql.createConnection({
       host: 'localhost',
       user: 'personal_site',
-      password: 'some_secret',
+      password: 'HS5RnNQCZGHUr5Bg',
       database: 'personal_site'
     });
   }
@@ -31,23 +31,23 @@ class MySQL extends DBModel {
   }
 
   pullBlogEntry(id) {
-    this.connection.query(this._getBlogEntryQuery, function(err, results, fields) {
-      if (err) throw err;
-    });
-    return true;
+    // this.connection.query(this._getBlogEntryQuery, function(err, results, fields) {
+    //   if (err) throw err;
+    // });
+    // return true;
   }
 
   saveBlogEntry(entry) {
-    var [ title, markdown, tags ] = entry;
-    html = `<h1>${title}</h1>` + this.converter.makeHTML(markdown);
-    currentDateTime = new Date(Date.now());
-
-    this.connection.query(this._setBlogEntryQuery, [title, markdown, html, tags], function(err, result) {
-      if (err) throw err;
-      else {
-
-      }
-    })
+    // var [ title, markdown, tags ] = entry;
+    // html = `<h1>${title}</h1>` + this.converter.makeHTML(markdown);
+    // currentDateTime = new Date(Date.now());
+    //
+    // this.connection.query(this._setBlogEntryQuery, [title, markdown, html, tags], function(err, result) {
+    //   if (err) throw err;
+    //   else {
+    //
+    //   }
+    // })
   }
 
   pullPastProject(id) {
