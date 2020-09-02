@@ -8,11 +8,11 @@ var showdown = require('showdown');
 var blogImageFolder = '/images/blog/';
 var pastProjectsImageFolder = '/images/past_projects';
 var getBlogEntryQuery = 'SELECT Title, Tags, HTML, Created FROM BlogEntry;';
-var setBlogEntryQuery = 'INSERT INTO BlogEntries\
+var saveBlogEntryQuery = 'INSERT INTO BlogEntries\
                     VALUES ?, ?, ?, ?, ?, ?, ?\
                     ON DUPLICATE KEY UPDATE\
                     ;';
-var setPastProjectQuery = '';
+var savePastProjectQuery = '';
 
 class MySQL extends DBModel {
   constructor() {
@@ -31,10 +31,10 @@ class MySQL extends DBModel {
   }
 
   pullBlogEntry(id) {
-    // this.connection.query(this._getBlogEntryQuery, function(err, results, fields) {
+    // this.connection.query(getBlogEntryQuery, function(err, results, fields) {
     //   if (err) throw err;
     // });
-    // return true;
+    return true;
   }
 
   saveBlogEntry(entry) {
@@ -42,7 +42,7 @@ class MySQL extends DBModel {
     // html = `<h1>${title}</h1>` + this.converter.makeHTML(markdown);
     // currentDateTime = new Date(Date.now());
     //
-    // this.connection.query(this._setBlogEntryQuery, [title, markdown, html, tags], function(err, result) {
+    // this.connection.query(saveBlogEntryQuery, [title, markdown, html, tags], function(err, result) {
     //   if (err) throw err;
     //   else {
     //

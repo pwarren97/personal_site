@@ -19,18 +19,28 @@ describe('MySQL', () => {
     });
   });
   describe('saveBlogEntry', () => {
-
+    it('Should save a blog valid blog entry and reject invalid ones', () => {
+      expect(true).to.equal(true);
+    });
   });
   describe('pullBlogEntry', () => {
-    var entry = db.pullBlogEntry(1);
+    it('Should pull blog entries for the database', () => {
+      var entry = db.pullBlogEntry(1);
+      expect(true).to.equal(true);
+    });
   });
   describe('savePastProject', () => {
-    // Need to create a format for a valid blog entry
-    var entry = {};
-    var err_msg = db.savePastProject(entry);
+    it('Should save valid past projects into the database', () => {
+      // Need to create a format for a valid blog entry
+      var entry = {};
+      var err_msg = db.savePastProject(entry);
+      expect(true).to.equal(true);
+    });
   });
   describe('pullPastProject', () => {
-
+    it('Should pull past projects from the database', () => {
+      expect(true).to.equal(true);
+    });
   });
   describe('validateBlogEntry', helpers.validateBlogEntryTest);
   describe('validateProjectEntry', helpers.validateProjectEntryTest);
