@@ -3,6 +3,7 @@ var { DBModel } = require('./dbmodel');
 
 var mysql = require('mysql');
 var showdown = require('showdown');
+var { Entry } = require('./entries/entry');
 
 /* Queries */
 var blogImageFolder = '/images/blog/';
