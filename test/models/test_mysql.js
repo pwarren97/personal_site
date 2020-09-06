@@ -4,9 +4,10 @@ var { MySQL } = require('../../app/models/mysql');
 var { expect, assert } = require('chai');
 var helpers = require('./helpers.js');
 
-var db = new MySQL();
 
 describe('MySQL', () => {
+  var db = new MySQL();
+  
   describe('constructor', () => {
     it('Should Set up connection with the database via the constructor', () => {
       var temp = new MySQL(); // dies at end of scope

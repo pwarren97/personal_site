@@ -1,4 +1,3 @@
-var showdown = require('showdown');
 var { DBModel } = require('./dbmodel');
 
 var mysql = require('mysql');
